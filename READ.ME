@@ -1,0 +1,120 @@
+# 🎬 Spatiotemporal Video Segmentation using Vision Transformers (DINO) + Spectral Clustering
+
+This project implements a self-supervised deep learning pipeline that segments objects or temporal events in videos using **Vision Transformers (ViT)** and **spectral clustering**. Patch-level features are extracted using a pretrained DINO model, and frame-to-frame similarity is analyzed to group visual content without any labels or manual annotations.
+
+---
+
+## 🧠 Key Features
+
+- ✅ Patch token extraction using Hugging Face’s **DINO-ViT**
+- ✅ Frame-wise **affinity matrix** construction using cosine similarity
+- ✅ **Spectral clustering** to segment coherent regions across time
+- ✅ Visual output: frames overlaid with pseudo-object masks
+- ✅ Fully modular — easy to extend for other video or temporal tasks
+
+---
+
+## 📁 Directory Structure
+
+video-cut-segmenter/
+├── extract_frames.py # Extracts frames from video
+├── dino_features.py # Extracts ViT patch embeddings
+├── build_affinity.py # Builds temporal patch similarity matrix
+├── spectral_clustering.py # Performs unsupervised clustering
+├── visualize.py # Overlays cluster labels on frames
+├── main.py # Orchestrates the full pipeline
+├── requirements.txt
+├── README.md
+├── input_video.mp4 # (optional, if running the code)
+└── samples/ # Manually added sample outputs (screenshots)
+├── output_0001.jpg
+├── output_0005.jpg
+└── output_0012.jpg
+
+yaml
+Copy
+Edit
+
+---
+
+## 🚀 How to Run (Optional)
+
+If you wish to run the pipeline:
+
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+Place a short .mp4 video in the project folder and name it:
+
+Copy
+Edit
+input_video.mp4
+Run:
+
+bash
+Copy
+Edit
+python main.py
+The output frames will be saved as:
+
+Copy
+Edit
+output_0000.jpg, output_0001.jpg, ...
+🖼️ Sample Output
+Here are example frames with clustered segmentation overlays:
+
+<img src="samples/output_0001.jpg" width="300"/> <img src="samples/output_0005.jpg" width="300"/>
+<img src="samples/output_0012.jpg" width="300"/>
+
+📦 Dependencies
+torch, torchvision
+
+transformers (DINO ViT)
+
+opencv-python
+
+matplotlib
+
+scikit-learn
+
+scipy
+
+tqdm
+
+Install them via:
+
+bash
+Copy
+Edit
+pip install -r requirements.txt
+📌 Applications
+🔬 Medical video segmentation (e.g., endoscopy, surgery)
+
+🧠 Unsupervised object tracking and event boundary detection
+
+🤖 Temporal parsing in robotics and surveillance
+
+🧪 Research prototyping for CVPR/NeurIPS-style work
+
+📚 Citation / Inspiration
+Vision Transformer backbone: facebook/dino-vitb16
+
+Method inspired by: "VideoCutLER: Surprisingly Simple Unsupervised Video Instance Segmentation" (CVPR 2024)
+
+💡 Author Notes
+This repository demonstrates an unsupervised learning approach for understanding videos through patch-based temporal clustering. It was built as part of a research showcase for advanced deep learning applications.
+
+Feel free to clone, build on top of it, or reach out with feedback!
+
+yaml
+Copy
+Edit
+
+---
+
+Let me know if you want:
+- A short academic-style abstract for your GitHub profile
+- A polished project description (like a mini paper title + summary)
+- Help writing the repository “About” section for GitHub
+
+Once you upload everything, this will look like a **top-tier PhD project**.
